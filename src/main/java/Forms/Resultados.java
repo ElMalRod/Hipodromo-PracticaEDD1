@@ -10,6 +10,13 @@ import static Forms.Main.apuestas;
 import Herramientas.Controlador;
 import Objetos.Postor;
 import Objetos.Apuesta;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,8 +28,10 @@ public class Resultados extends javax.swing.JFrame {
     /**
      * Creates new form IngresoDatos
      */
-    public Resultados() {
+    BufferedImage fondo = ImageIO.read(new File("src/main/java/Imagenes/Fondo2.png"));
+    public Resultados()throws IOException {
         initComponents();
+         jLabel1.setIcon(new ImageIcon(fondo));
     }
 
     /**
@@ -45,106 +54,144 @@ public class Resultados extends javax.swing.JFrame {
         Combox8 = new javax.swing.JComboBox<>();
         Combox9 = new javax.swing.JComboBox<>();
         Combox10 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        Ingresar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Combox1.setBackground(new java.awt.Color(255, 204, 0));
+        Combox1.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 90, -1));
 
+        Combox3.setBackground(new java.awt.Color(187, 104, 30));
+        Combox3.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 60, 90, -1));
 
+        Combox4.setBackground(new java.awt.Color(0, 153, 153));
+        Combox4.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 90, -1));
 
+        Combox5.setBackground(new java.awt.Color(0, 153, 153));
+        Combox5.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 150, 90, -1));
 
+        Combox6.setBackground(new java.awt.Color(0, 153, 153));
+        Combox6.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 150, 90, -1));
 
+        Combox2.setBackground(new java.awt.Color(204, 204, 204));
+        Combox2.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, 90, -1));
 
+        Combox7.setBackground(new java.awt.Color(0, 153, 153));
+        Combox7.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 90, -1));
 
+        Combox8.setBackground(new java.awt.Color(0, 153, 153));
+        Combox8.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 240, 90, -1));
 
+        Combox9.setBackground(new java.awt.Color(0, 153, 153));
+        Combox9.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 240, 90, -1));
 
+        Combox10.setBackground(new java.awt.Color(0, 153, 153));
+        Combox10.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Combox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo 1", "Caballo 2", "Caballo 3", "Caballo 4", "Caballo 5", "Caballo 6", "Caballo 7", "Caballo 8", "Caballo 9", "Caballo 10" }));
+        jPanel1.add(Combox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 240, 90, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Ingresar.setBackground(new java.awt.Color(204, 204, 204));
+        Ingresar.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
+        Ingresar.setText("Ingresar");
+        Ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                IngresarActionPerformed(evt);
             }
         });
+        jPanel1.add(Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 140, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(Combox1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Combox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(408, 408, 408)
-                        .addComponent(jButton1)))
-                .addContainerGap(61, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Combox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Combox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(91, 91, 91)
-                .addComponent(jButton1)
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel2.setText("10mo Lugar");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 210, 90, -1));
+
+        jLabel3.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
+        jLabel3.setText("INGRSO DE RESULTADOS DE LA CARRERA");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 410, 60));
+
+        jLabel4.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel4.setText("2do Lugar");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 30, 90, -1));
+
+        jLabel5.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel5.setText("3ro Lugar");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 30, 90, -1));
+
+        jLabel6.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel6.setText("4to Lugar");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 120, 90, -1));
+
+        jLabel8.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel8.setText("6to Lugar");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 120, 90, -1));
+
+        jLabel7.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel7.setText("5to Lugar");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 90, -1));
+
+        jLabel9.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel9.setText("7mo Lugar");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, 90, -1));
+
+        jLabel10.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel10.setText("8vo Lugar");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 90, -1));
+
+        jLabel11.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel11.setText("9no Lugar");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 210, 90, -1));
+
+        jLabel12.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jLabel12.setText("1er Lugar");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 90, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 280));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1083, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarActionPerformed
         // TODO add your handling code here:
         int[] caballos = new int[10];
         caballos[0] = Combox1.getSelectedIndex() + 1;
@@ -160,13 +207,13 @@ public class Resultados extends javax.swing.JFrame {
         if(Verificacion(caballos)==true){
             apuestas= true;
             this.dispose();
-            JOptionPane.showMessageDialog(null, "INGRESO CORRECTO");
+            JOptionPane.showMessageDialog(null, "Ingreso Correcto de Resultados");
         }else{
-            JOptionPane.showMessageDialog(null, "Hemos encontrado\n"
-                +"errores en el ingreso\n"
-                +"de resultados");
+            JOptionPane.showMessageDialog(null, " Verifique nuevamente\n",
+               "ERROR AL INGRESEAR RESULTADOS", JOptionPane.ERROR_MESSAGE);
+          
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_IngresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,7 +246,12 @@ public class Resultados extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Resultados().setVisible(true);
+                
+                 try {
+                    new Resultados().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -221,7 +273,19 @@ public class Resultados extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Combox7;
     private javax.swing.JComboBox<String> Combox8;
     private javax.swing.JComboBox<String> Combox9;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Ingresar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

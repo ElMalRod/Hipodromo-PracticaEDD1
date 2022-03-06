@@ -9,19 +9,29 @@ import static Forms.Main.apuestas;
 import static Forms.Main.lista;
 import Herramientas.Archivo;
 import Herramientas.ControlCaballo;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author emili
  */
-public class Inicio extends javax.swing.JFrame {
+public class Inicio extends javax.swing.JFrame  {
 
     /**
      * Creates new form Inicio
      */
-    public Inicio() {
+    BufferedImage fondo = ImageIO.read(new File("src/main/java/Imagenes/Fondo.jpg"));
+    
+    public Inicio()throws IOException {
         initComponents();
+        jLabel1.setIcon(new ImageIcon(fondo));
     }
 
     /**
@@ -41,64 +51,83 @@ public class Inicio extends javax.swing.JFrame {
         CerrarApuesta = new javax.swing.JButton();
         Entradatxt = new javax.swing.JTextArea();
         salir1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        IngresoApuesta.setBackground(new java.awt.Color(255, 204, 102));
+        IngresoApuesta.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         IngresoApuesta.setText("Ingresar Apuesta");
         IngresoApuesta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IngresoApuestaActionPerformed(evt);
             }
         });
-        jPanel1.add(IngresoApuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, 150, 60));
+        jPanel1.add(IngresoApuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, 150, 60));
 
+        VerificarApuesta.setBackground(new java.awt.Color(255, 204, 102));
+        VerificarApuesta.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         VerificarApuesta.setText("Verificar");
         VerificarApuesta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VerificarApuestaActionPerformed(evt);
             }
         });
-        jPanel1.add(VerificarApuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 240, 150, 60));
+        jPanel1.add(VerificarApuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, 150, 60));
 
+        Resultados.setBackground(new java.awt.Color(255, 204, 102));
+        Resultados.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         Resultados.setText("Resultados");
         Resultados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResultadosActionPerformed(evt);
             }
         });
-        jPanel1.add(Resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 440, 150, 60));
+        jPanel1.add(Resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 390, 150, 60));
 
+        SubirArchivo.setBackground(new java.awt.Color(255, 204, 102));
+        SubirArchivo.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         SubirArchivo.setText("Cargar Archivo");
         SubirArchivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubirArchivoActionPerformed(evt);
             }
         });
-        jPanel1.add(SubirArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 150, 60));
+        jPanel1.add(SubirArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, 150, 60));
 
+        CerrarApuesta.setBackground(new java.awt.Color(255, 204, 102));
+        CerrarApuesta.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         CerrarApuesta.setText("Cerrar Apuestas");
         CerrarApuesta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CerrarApuestaActionPerformed(evt);
             }
         });
-        jPanel1.add(CerrarApuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 150, 60));
+        jPanel1.add(CerrarApuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 300, 150, 60));
 
+        Entradatxt.setBackground(new java.awt.Color(255, 204, 153));
         Entradatxt.setColumns(20);
         Entradatxt.setRows(5);
-        jPanel1.add(Entradatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 600, 540));
+        Entradatxt.setText("SE VISUALIZARAN LOS DATOS INGRESADOS ATRAVEZ DE UN ARCHIVO...");
+        jPanel1.add(Entradatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 550, 500));
 
+        salir1.setBackground(new java.awt.Color(255, 153, 102));
+        salir1.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
         salir1.setText("Salir");
         salir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salir1ActionPerformed(evt);
             }
         });
-        jPanel1.add(salir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 580, 130, 60));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 660));
+        jPanel1.add(salir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 480, 130, 60));
+
+        jLabel2.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
+        jLabel2.setText("HIPODROMO SERVICIO DE APUESTAS");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,17 +146,23 @@ public class Inicio extends javax.swing.JFrame {
     private void IngresoApuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoApuestaActionPerformed
         // TODO add your handling code here:
          if (apuestas == true) {
-            IngresarDatos ingreso = new IngresarDatos();
-            ingreso.setVisible(true);
+          try {
+                   new IngresarDatos().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
         } else {
-            JOptionPane.showMessageDialog(null, "ACTUALMENTE LAS APUESTAS ESTAN CERRADAS");
+            JOptionPane.showMessageDialog(null, " LAS APUESTAS ESTAN CERRADAS");
         }
     }//GEN-LAST:event_IngresoApuestaActionPerformed
 
     private void ResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultadosActionPerformed
         // TODO add your handling code here:
-         Resultados R= new Resultados();
-        R.setVisible(true);
+          try {
+                    new Resultados().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
     }//GEN-LAST:event_ResultadosActionPerformed
 
     private void SubirArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirArchivoActionPerformed
@@ -140,7 +175,7 @@ public class Inicio extends javax.swing.JFrame {
             System.out.println("----------->");
             lista.Imprimir();
         }else{
-            JOptionPane.showMessageDialog(null, "ACTUALMENTE ESTAN CERRADAS LAS APUESTAS");
+            JOptionPane.showMessageDialog(null, " LAS APUESTAS ESTAN CERRADAS");
         }
         
         
@@ -196,7 +231,12 @@ public class Inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
+                try {
+                    new Inicio().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
             }
         });
     }
@@ -210,6 +250,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton SubirArchivo;
     private javax.swing.JButton VerificarApuesta;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton salir1;
     // End of variables declaration//GEN-END:variables

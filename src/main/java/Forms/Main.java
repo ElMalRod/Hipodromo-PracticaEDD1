@@ -6,6 +6,7 @@
 package Forms;
 
 import Herramientas.Controlador;
+import java.io.IOException;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Main {
     public static Controlador errores= new Controlador();
     public static boolean apuestas=true;
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
          Inicio v= new Inicio();
           v.setVisible(true);

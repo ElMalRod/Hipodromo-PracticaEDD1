@@ -43,7 +43,7 @@ public class Controlador {
         }
         tamaño++;                                                                  
                          
-                                                                            //RESULTADO: O(1)
+                                                                            //Resultado: O(1) Constante
 
     }
     
@@ -57,9 +57,9 @@ public class Controlador {
             if (inicioNodo.getAnterior() == ultimoNodo.getSiguiente()) {        
                 bandera=false;
                 contador++;
-                System.out.println("si entre vamossss");
+                System.out.println("------------USUARIOS PARTICIPANTES----------");
             } else {                                                           
-                while (bandera) {                                                  //O(n)
+                while (bandera) {                                                  
                     if (aux != auxi) {                                         
                        
                         aux = aux.getSiguiente();                              
@@ -68,7 +68,7 @@ public class Controlador {
                         bandera = false;                                          
                         contador++;                                             
                     }                                                      
-                                                               //Resultado final O(n)
+                                                               //Resultado final O(n) Lineal
                 }
             }
 
@@ -79,22 +79,22 @@ public class Controlador {
     public Controlador analizarApuestas() {
         int contador=0;
         boolean bandera = true;                                                                                           
-        if (vacio() == false) { // VERIFICO QUE NO ESTE VACIA MI LISTA            
+        if (vacio() == false) {          
             Nodo aux = inicioNodo.getSiguiente();                               
             Nodo auxi = inicioNodo.getAnterior();                              
             if (inicioNodo.getAnterior() == ultimoNodo.getSiguiente()) {          
                 this.apuesta = inicioNodo.getValor();                              
                         this.contador=0;                                                         
                         this.caballos = this.apuesta.getCaballos();                
-                        validacionApuesta();                                                                                 
+                        ValidarApuesta();                                                                                 
             } else {                                                               
-                while (bandera) {                                                     //O(n)-------> Unico O(n)
+                while (bandera) {                                                    
                     if (aux != auxi) {                                            
                         this.apuesta = aux.getValor();                             
                         this.contador=0;                                                          
                         this.caballos = aux.getValor().getCaballos();             
                         this.encontrado=false;                                    
-                        validacionApuesta();                                      
+                        ValidarApuesta();                                      
                         aux = aux.getSiguiente();                                
                         this.apuesta=aux.getValor();                             
                         contador++;                                                
@@ -103,13 +103,13 @@ public class Controlador {
                         this.contador=0;                                           
                         this.caballos = aux.getValor().getCaballos();              
                         this.encontrado=false;                                
-                        validacionApuesta();                                    
+                        ValidarApuesta();                                    
                         aux = aux.getSiguiente();                                 
                         this.apuesta=aux.getValor();                               
                         bandera = false;                                           
                         contador++;                                                
-                    }                                                             //---------------   
-                                                                       //Resultado final n
+                    }                                                               
+                                                                       //Resultado final O(n) Lineal
                 }
             }
         }
@@ -118,7 +118,7 @@ public class Controlador {
     }
     
     
-    public void validacionApuesta() {
+    public void ValidarApuesta() {
         boolean encontado=true;
         for (int i = (contador + 1); i < 10; i++) {                             
             if (this.caballos[contador] == this.caballos[i]) {                
@@ -131,9 +131,9 @@ public class Controlador {
         }                                                                      
         if (encontado == false) {                                             
             this.contador++;                                                  
-             validacionApuesta();                                               //O(1)    
-        }                                                                 //--------------
-    }                                                        //RESULTADO FINAL     1
+             ValidarApuesta();                                               
+        }                                                                
+    }                                                        //Resultado final    O(1) Constante
     
     
     public boolean ValidarResultados(int[] array ) {
@@ -149,17 +149,17 @@ public class Controlador {
             contadorA++;                                                        
              ValidarResultados(array);                                 
         } 
-        return  true;                                                       //--------------
-    }                                                           //RESULTADO FINAL  1
+        return  true;                                                    
+    }                                                           //Resultado final    O(1) Constante
     
     
     public Controlador Eliminar(){
-        boolean leer=true;
-        Controlador lis= new Controlador();
+        boolean bandera=true;
+        Controlador list= new Controlador();
         if (vacio() == false) {          
-            System.out.println("ini"+inicioNodo.getAnterior().getValor());
-            System.out.println("ini"+ultimoNodo.getValor());
-            System.out.println("ini"+ultimoNodo.getSiguiente().getValor());
+            System.out.println("==>"+inicioNodo.getAnterior().getValor());
+            System.out.println("==>"+ultimoNodo.getValor());
+            System.out.println("==>"+ultimoNodo.getSiguiente().getValor());
             Nodo aux = inicioNodo;                              
             Nodo auxi = inicioNodo.getAnterior();
             if(inicioNodo.getValor().isValida()==false){
@@ -168,7 +168,7 @@ public class Controlador {
                 ultimoNodo.setSiguiente(inicioNodo);
                 aux=inicioNodo.getSiguiente();
             }else{
-                lis.anadir(aux.getValor());
+                list.anadir(aux.getValor());
                             aux = aux.getSiguiente();
             }
             if (inicioNodo == ultimoNodo.getSiguiente()) {        
@@ -177,14 +177,14 @@ public class Controlador {
                          inicioNodo.setSiguiente(null);                 
                          Main.errores.anadir(aux.getValor());   
                         }                                                       
-                        leer=false;                                           
+                        bandera=false;                                           
             } else {                                                         
-                while (leer) {                                                  //O(n)-------> Unico O(n)
+                while (bandera) {                                                  //O(n)-------> Unico O(n)
                     if (aux != auxi) {                                       
                         if(aux.getValor().isValida()==true){                   
-                            lis.anadir(aux.getValor());
+                            list.anadir(aux.getValor());
                             aux = aux.getSiguiente();
-                            System.out.println("sisisis");
+                            System.out.println("eliminacion correcta");
                             
                         }else{
                            if(aux.getAnterior() == aux.getSiguiente() ){        
@@ -214,18 +214,18 @@ public class Controlador {
                             aux.getSiguiente().setAnterior(anterior);           
                            
                         }else{
-                             lis.anadir(aux.getValor());
+                             list.anadir(aux.getValor());
                             
                         }  
-                        leer = false;                                           
-                    }                                                     //---------------   
-                                                                       //Resultado final n
+                        bandera = false;                                           
+                    }                                                      
+                                                                       //Resultado final O(n) Lineal
                 }
             }
         }else{
             System.out.println("NO HAY DATOS");
         }
-        return lis;
+        return list;
         
     }
 }

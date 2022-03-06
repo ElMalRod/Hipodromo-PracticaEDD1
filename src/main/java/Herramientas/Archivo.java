@@ -43,12 +43,14 @@ public class Archivo {
                 
                
             } catch (IOException e1) {
-                JOptionPane.showMessageDialog(null, "NO SE PUDO CARGAR EL ARCHIVO");
+               JOptionPane.showMessageDialog(null, " NO SE PUDO CARGAR EL ARCHIVO\n",
+               "ERROR ", JOptionPane.ERROR_MESSAGE);
             }
             return null;
         }
        }catch(Exception e){
-           JOptionPane.showMessageDialog(null, "NO SE PUDO CARGAR EL ARCHIVO");
+           JOptionPane.showMessageDialog(null, " NO SE PUDO CARGAR EL ARCHIVO\n",
+               "ERROR ", JOptionPane.ERROR_MESSAGE);
          
        }
         return null;
