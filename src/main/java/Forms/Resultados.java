@@ -8,6 +8,7 @@ package Forms;
 import static Forms.Main.lista;
 import static Forms.Main.apuestas;
 import Herramientas.Controlador;
+import Herramientas.Orden;
 import Objetos.Postor;
 import Objetos.Apuesta;
 import java.awt.image.BufferedImage;
@@ -204,15 +205,25 @@ public class Resultados extends javax.swing.JFrame {
         caballos[7] = Combox8.getSelectedIndex() + 1;
         caballos[8] = Combox9.getSelectedIndex() + 1;
         caballos[9] = Combox10.getSelectedIndex() + 1;
-        if(Verificacion(caballos)==true){
-            apuestas= true;
-            this.dispose();
-            JOptionPane.showMessageDialog(null, "Ingreso Correcto de Resultados");
-        }else{
-            JOptionPane.showMessageDialog(null, " Verifique nuevamente\n",
-               "ERROR AL INGRESEAR RESULTADOS", JOptionPane.ERROR_MESSAGE);
-          
-        }
+    if(Verificacion(caballos)==true){
+                 apuestas= true;
+                 this.dispose();
+                  JOptionPane.showMessageDialog(null, "INGRESO CORRECTO");
+                  lista.CalcularPuntos(caballos);
+                  JOptionPane.showMessageDialog(null, "\tA Continuacion te enviamos el archivo\n\tde resultados");
+                 // new Orde(lista).insertionSort();
+                 try{
+                     lista.generarArchivo(lista);
+                 }catch(Exception e){
+                     JOptionPane.showMessageDialog(null, "HEMOS TENIDO ERRORES AL PRESENTAR LOS RESULTADOS");
+                 }
+                 
+                 // lista.imprimirPuntos();
+            }else{
+                JOptionPane.showMessageDialog(null, "Hemos encontrado\n"
+                        +"errores en el ingreso\n"
+                        +"de resultados");
+            }
     }//GEN-LAST:event_IngresarActionPerformed
 
     /**

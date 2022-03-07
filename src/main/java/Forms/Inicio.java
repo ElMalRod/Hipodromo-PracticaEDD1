@@ -9,6 +9,7 @@ import static Forms.Main.apuestas;
 import static Forms.Main.lista;
 import Herramientas.Archivo;
 import Herramientas.ControlCaballo;
+import Herramientas.Controlador;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -167,28 +168,34 @@ public class Inicio extends javax.swing.JFrame  {
 
     private void SubirArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirArchivoActionPerformed
         // TODO add your handling code here:
-           if (apuestas == true) {
-            Archivo Entrada = new Archivo();
-            String[] cadena = Entrada.SubirArchivo(this);
+         if (apuestas == true) {
+            Archivo archE = new Archivo();
+            String[] cadena = archE.SubirArchivo(this);
+            Controlador liso= new Controlador();
+            Controlador lisoE= new Controlador();
             ControlCaballo cc = new ControlCaballo();
-            lista = cc.validacionCaballos(cadena, lista);
-            System.out.println("----------->");
-            lista.Imprimir();
+            Main.errores=lisoE;
+            lista = cc.validacionCaballos(cadena, liso);
+            int Datos=lista.tamañoArreglo();
+            JOptionPane.showMessageDialog(null,"Se ingresaron "+ Datos+" filas");
         }else{
-            JOptionPane.showMessageDialog(null, " LAS APUESTAS ESTAN CERRADAS");
+            JOptionPane.showMessageDialog(null, "ACTUALMENTE ESTAN CERRADAS LAS APUESTAS");
         }
-        
         
     }//GEN-LAST:event_SubirArchivoActionPerformed
 
     private void CerrarApuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarApuestaActionPerformed
         // TODO add your handling code here:
-          apuestas=false;
-        JOptionPane.showMessageDialog(null, "Analisis de apuestas automatico\n"+
-                                                         "Las apuestas se han cerrado correctamente");
-       lista=lista.analizarApuestas();                                       //O(n)
-        lista.Imprimir();                                      //O(n)
-        Main.errores.Imprimir();
+           apuestas=false;                                                 
+        JOptionPane.showMessageDialog(null, "Hemos analizado las apuestas, recuerda ingresar los resultado\n"+
+                                                         "no olvides ingresar los resultados");          
+                                               
+        JOptionPane.showMessageDialog(null, "\tA Continuacion te enviamos el archivo\n\tde las apuestas que han tenido errores y\n\tno se han tomado en cuenta");
+        lista=lista.analizarApuestas();
+        lista.tamañoArreglo();                                    
+        Main.errores.tamañoArreglo();
+                                                                //----------------
+                                                                        //n
     }//GEN-LAST:event_CerrarApuestaActionPerformed
 
     private void VerificarApuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerificarApuestaActionPerformed

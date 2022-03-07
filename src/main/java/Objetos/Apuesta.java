@@ -79,7 +79,7 @@ public class Apuesta {
     public String toString() {
         return  "Nombre: " + cliente .getNombre()
                 + ", Monto de Apuesta: Q." + montoApuesta + ", Ordenamiento De Caballos: \n" + getListCaballos(this)
-                + "\n Apuesta del Postor "+ cliente +" "+ isValida();
+                + "\n Apuesta del Postor "+ cliente.getNombre() +" "+ isValida();
     }
     
     public String getListCaballos(Apuesta name){

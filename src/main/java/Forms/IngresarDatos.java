@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -255,6 +256,7 @@ public class IngresarDatos extends javax.swing.JFrame {
             caballos[8] = Combox9.getSelectedIndex() + 1;
             caballos[9] = Combox10.getSelectedIndex() + 1;
             lista.anadir(new Apuesta(new Postor(Nombretxt.getText()), Double.parseDouble(Montotxt.getText()), caballos));
+                 JOptionPane.showMessageDialog(null, " Apuesta Ingresada Correctamente ");
             this.dispose();
     }//GEN-LAST:event_AgregarApuestaActionPerformed
 
